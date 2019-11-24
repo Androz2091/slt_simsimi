@@ -1,0 +1,16 @@
+{
+  "name": "slt_simsimi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "instagram-private-api": "^1.33.0",
+    "instagram_mqtt": "github:Nerixyz/instagram_mqtt",
+    "simsimi": "github:Androz2091/simsimi"
+  }
+}

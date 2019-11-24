@@ -1,0 +1,7 @@
+# Instagram Cookies
+state.json
+# Node
+node_modules/
+package-lock.json
+# Configuration
+config.js
