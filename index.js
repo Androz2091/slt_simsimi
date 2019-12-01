@@ -38,9 +38,13 @@ const sendDMTo = async (username, content) => {
         let content = data.message.split(":").slice(1, data.message.split(":").length).join(":");
         content = content.substr(1, content.length);
         let answer = await simsimi(content).catch(console.error);
-        sendDMTo(author, answer || "Hmm... une erreur est survenue 😕");
+        sendDMTo(author, answer || "Hmm... une erreur est survenue 😕").catch((e) => {
+            // Approve all requests
+            const items = await ig.feed.directPending().items();
+            items.forEach(async (item) => await ig.directThread.approve(item.thread_id));
+        });
         console.log("[USER] "+author+" : "+content)
-        console.log("[ ME ] slt_simsimi : "+answer || "Hmm... une erreur est survenue 😕")
+        console.log("[ ME ] slt_simsimi : "+answer || "Hmm... une erreur est survenue 😕");
     });
 
     fbnsClient.on("auth", async (auth) => {
